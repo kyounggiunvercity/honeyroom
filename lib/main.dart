@@ -1,19 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:honeyroom/pages/hexagon.dart';
 
 //import 'login/transition_route_observer.dart';
-import 'pages/root_page.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
-      systemNavigationBarColor:
-          SystemUiOverlayStyle.dark.systemNavigationBarColor,
-    ),
-  );
+  await Firebase.initializeApp();
 
   runApp(MyApp());
 }
@@ -23,43 +16,72 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '꿀집',
+      title: '꿀방',
       theme: ThemeData(
+        backgroundColor: Colors.yellow[50],
         // brightness: Brightness.dark,
         primarySwatch: Colors.yellow,
         accentColor: Colors.orange,
-        textSelectionTheme: TextSelectionThemeData(cursorColor: Colors.black),
+        textSelectionTheme: TextSelectionThemeData(cursorColor: Colors.white),
         // fontFamily: 'SourceSansPro',
+        iconTheme: IconThemeData(color: Colors.brown),
         textTheme: TextTheme(
-          headline3: TextStyle(
-            fontFamily: 'OpenSans',
-            fontSize: 45.0,
-            // fontWeight: FontWeight.w400,
-            color: Colors.brown[900],
-          ),
           button: TextStyle(
-            // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
             fontFamily: 'OpenSans',
+            color: Colors.black,
           ),
           caption: TextStyle(
             fontFamily: 'NotoSans',
             fontSize: 12.0,
             fontWeight: FontWeight.normal,
-            color: Colors.deepPurple[300],
+            color: Colors.grey,
           ),
-          headline1: TextStyle(fontFamily: 'Quicksand'),
-          headline2: TextStyle(fontFamily: 'Quicksand'),
-          headline4: TextStyle(fontFamily: 'Quicksand'),
-          headline5: TextStyle(fontFamily: 'NotoSans'),
-          headline6: TextStyle(fontFamily: 'NotoSans'),
-          subtitle1: TextStyle(fontFamily: 'NotoSans'),
-          bodyText1: TextStyle(fontFamily: 'NotoSans'),
-          bodyText2: TextStyle(fontFamily: 'NotoSans'),
-          subtitle2: TextStyle(fontFamily: 'NotoSans'),
-          overline: TextStyle(fontFamily: 'NotoSans'),
+          headline1: TextStyle(
+            fontFamily: 'Quicksand',
+            color: Colors.black,
+          ),
+          headline2: TextStyle(
+            fontFamily: 'Quicksand',
+            color: Colors.black,
+          ),
+          headline3: TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 45.0,
+            //fontWeight: FontWeight.w400,
+            color: Colors.black,
+          ),
+          headline4: TextStyle(
+            fontFamily: 'Quicksand',
+            color: Colors.black,
+          ),
+          headline5: TextStyle(
+            fontFamily: 'NotoSans',
+            color: Colors.black,
+          ),
+          headline6: TextStyle(fontFamily: 'NotoSans', color: Colors.black),
+          bodyText1: TextStyle(
+            fontFamily: 'NotoSans',
+            color: Colors.black,
+          ),
+          bodyText2: TextStyle(
+            fontFamily: 'NotoSans',
+            color: Colors.black,
+          ),
+          subtitle1: TextStyle(
+            fontFamily: 'NotoSans',
+            color: Colors.black,
+          ),
+          subtitle2: TextStyle(
+            fontFamily: 'NotoSans',
+            color: Colors.black,
+          ),
+          overline: TextStyle(
+            fontFamily: 'NotoSans',
+            color: Colors.black,
+          ),
         ),
       ),
-      home: RootPage(),
+      home: MyHomePage(),
       //navigatorObservers: [TransitionRouteObserver()],
     );
   }
