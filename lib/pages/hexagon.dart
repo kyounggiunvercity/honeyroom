@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hexagon/hexagon.dart';
 import 'package:honeyroom/login/login_screen.dart';
-import 'package:honeyroom/pages/screen/favorit_screen.dart';
+import 'package:honeyroom/map/map_screen.dart';
+import 'package:honeyroom/pages/screen/favorite_screen.dart';
 import 'package:honeyroom/pages/screen/menu1.dart';
 import 'package:honeyroom/pages/screen/menu2.dart';
 import 'package:honeyroom/pages/screen/menu3.dart';
@@ -238,7 +239,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ApartPage(),
+                  builder: (context) => Main(),
                 ),
               ),
           child: setIcons(col, row));
@@ -247,7 +248,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => VillaPage(),
+                  builder: (context) => Main(),
                 ),
               ),
           child: setIcons(col, row));
@@ -256,7 +257,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => OfficePage(),
+                  builder: (context) => Main(),
                 ),
               ),
           child: setIcons(col, row));

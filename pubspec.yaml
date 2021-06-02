@@ -12,6 +12,7 @@ dependencies:
   flutter_login: ^1.1.0
   firebase_auth: ^1.0.3
   firebase_core: ^1.0.3
+  cloud_firestore: ^1.0.4
   hexagon: ^0.1.1
   cupertino_icons: ^1.0.2
   google_maps_flutter: ^2.0.3
@@ -23,6 +24,10 @@ dependencies:
   flutter_typeahead: ^3.1.1
   uuid: ^3.0.4
   provider: ^5.0.0
+  flutter_swiper: ^1.1.6
+  fluster: ^1.2.0
+  flutter_cache_manager: ^3.0.2
+  google_maps_cluster_manager: ^1.0.0
 
 dev_dependencies:
   flutter_test: 
@@ -40,7 +45,8 @@ flutter:
   - assets/images/hive.jpg
   - assets/images/honey.jpg
   - assets/images/honey2.png
-
+  - assets/json/4depth.json
+  
   fonts:
     - family: OpenSans
       fonts:
